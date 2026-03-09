@@ -79,8 +79,14 @@ export class AppComponent {
     this.navigationService.items = [
       {
         type: 'link',
-        label: 'Dashboard',
-        route: '/',
+        label: 'Lista tarefa local',
+        route: '/lista-tarefa-local',
+        icon: icLayers
+      },
+      {
+        type: 'link',
+        label: 'Lista tarefa api',
+        route: '/lista-tarefa-api',
         icon: icLayers
       }
     ];

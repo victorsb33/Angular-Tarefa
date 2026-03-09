@@ -9,6 +9,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { CustomLayoutModule } from './custom-layout/custom-layout.module';
 import { ListaTarefaLocalComponent } from './pages/lista-tarefa-local/lista-tarefa-local.component';
 import { ListaTarefaApiComponent } from './pages/lista-tarefa-api/lista-tarefa-api.component';
+import { MatInputModule } from '@angular/material/input';
+import { ReactiveFormsModule } from '@angular/forms';
+import {MatIconModule} from '@angular/material/icon';
+import { MatTableModule } from '@angular/material/table';
+
+
 
 @NgModule({
   declarations: [AppComponent, ListaTarefaLocalComponent, ListaTarefaApiComponent],
@@ -20,7 +26,12 @@ import { ListaTarefaApiComponent } from './pages/lista-tarefa-api/lista-tarefa-a
 
     // Vex
     VexModule,
-    CustomLayoutModule
+    CustomLayoutModule,
+    MatInputModule,
+    ReactiveFormsModule,
+    MatIconModule,
+    MatTableModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
