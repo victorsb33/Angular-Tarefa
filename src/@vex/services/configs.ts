@@ -3,8 +3,8 @@ import { ConfigName } from '../interfaces/config-name.model';
 import { Config } from '../interfaces/config.model';
 
 const defaultConfig: Config = {
-  id: ConfigName.apollo,
-  name: 'Apollo',
+  id: ConfigName.ikaros,
+  name: 'ikaros',
   imgSrc: '//vex-landing.visurel.com/assets/img/layouts/apollo.png',
   layout: 'horizontal',
   boxed: false,
