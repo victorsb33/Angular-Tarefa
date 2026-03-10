@@ -1,42 +1,48 @@
-<h1> Listagem de Tarefas</h1>
+<div class="container">
+  <h1> Listagem de Tarefas</h1>
 
-<form class="example-form">
-  <mat-form-field class="example-full-width" appearance="fill">
-    <mat-label>Listar Tarefa</mat-label>
-    <input type="email" matInput [formControl]="listarTarefa" placeholder="Ex. Estudar">
-  </mat-form-field>
-</form>
+  <div class="form-container">
+    <form class="example-form">
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Listar Tarefa</mat-label>
+        <input type="email" matInput [formControl]="listarTarefa" placeholder="Ex. Estudar">
+      </mat-form-field>
+    </form>
 
-<div class="col">
-        <button mat-button mat-raised-button color="primary" fxFlex="grow"
-            class="botao-adicionar">
-            Adicionar <mat-icon>add</mat-icon>
-        </button>
-    </div>
+    <button mat-raised-button color="primary" (click)="adicionarTarefa()"> Adicionar </button>
+  </div>
 
-<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  <div class="table-container">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      <!--- Note that these columns can be defined in any order.
+            The actual rendered columns are set as a property on the row definition" -->
 
-  <!--- Note that these columns can be defined in any order.
-        The actual rendered columns are set as a property on the row definition" -->
+      <!-- Position Column -->
+      <ng-container matColumnDef="posicao">
+        <th mat-header-cell *matHeaderCellDef> N </th>
+        <td mat-cell *matCellDef="let element"> {{element.posicao}} </td>
+      </ng-container>
 
-  <!-- Position Column -->
-  <ng-container matColumnDef="posicao">
-    <th mat-header-cell *matHeaderCellDef> N </th>
-    <td mat-cell *matCellDef="let element"> {{element.posicao}} </td>
-  </ng-container>
+      <!-- Name Column -->
+      <ng-container matColumnDef="descricao">
+        <th mat-header-cell *matHeaderCellDef> Descrição </th>
+        <td mat-cell *matCellDef="let element"> {{element.descricao}} </td>
+      </ng-container>
 
-  <!-- Name Column -->
-  <ng-container matColumnDef="descricao">
-    <th mat-header-cell *matHeaderCellDef> Descrição </th>
-    <td mat-cell *matCellDef="let element"> {{element.descricao}} </td>
-  </ng-container>
+      <!-- Status Column -->
+      <ng-container matColumnDef="status">
+        <th mat-header-cell *matHeaderCellDef> Status </th>
+        <td mat-cell *matCellDef="let element; let i = index">
+          <mat-checkbox
+            [checked]="element.status === 'true'"
+            (change)="alterarStatus(i, $event.checked)">
+            {{ element.status === 'true' ? 'Concluída' : 'Pendente' }}
+          </mat-checkbox>
+        </td>
+      </ng-container>
 
-  <!-- Weight Column -->
-  <ng-container matColumnDef="status">
-    <th mat-header-cell *matHeaderCellDef> Status </th>
-    <td mat-cell *matCellDef="let element"> {{element.status}} </td>
-  </ng-container>
-
-  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-</table>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+</div>

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { MatTableDataSource } from '@angular/material/table';
+
 
 export interface Tarefas {
   descricao: string;
@@ -22,8 +24,30 @@ const ELEMENT_DATA: Tarefas[] = [
 export class ListaTarefaLocalComponent implements OnInit {
   
 displayedColumns: string[] = ['posicao', 'descricao', 'status'];
-  dataSource = ELEMENT_DATA;  
+dataSource = new MatTableDataSource(ELEMENT_DATA);  
 listarTarefa = new FormControl('');
+
+adicionarTarefa() {
+    const descricao = this.listarTarefa.value?.trim();
+    if (!descricao) return;
+    
+    const novaTarefa: Tarefas = {
+      posicao: this.dataSource.data.length + 1,
+      descricao,
+      status: 'false'
+    };
+    
+    this.dataSource.data.push(novaTarefa);
+    this.dataSource.data = [...this.dataSource.data]; // Atualiza
+    this.listarTarefa.reset();
+  }
+
+  alterarStatus(index: number, checked: boolean) {
+  this.dataSource.data[index].status = checked ? 'true' : 'false';
+  this.dataSource.data = [...this.dataSource.data]; // Força atualização
+}
+
+  
 
   constructor() { }
 

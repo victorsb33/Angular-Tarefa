@@ -1,5 +1,30 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem;
+  gap: 2rem;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  max-width: 600px;
+}
+
+.table-container {
+  width: 100%;
+  max-width: 800px;
+  overflow-x: auto;
+}
+
 .example-form {
-  min-width: 150px;
+  min-width: 300px;
   max-width: 500px;
   width: 100%;
 }
@@ -7,18 +32,45 @@
 .example-full-width {
   width: 100%;
 }
-.col {
-  display: flex;
-  align-items: center;
-}
-.botao-adicionar {
-    color: white;
-}
+
 table {
   width: 100%;
+  margin: 0 auto;
 }
+
 button[mat-button] mat-icon,
 button[mat-raised-button] mat-icon {
   vertical-align: middle;
-  
+}
+
+section {
+  display: table;
+}
+
+.example-label {
+  display: table-cell;
+  font-size: 14px;
+  margin-left: 8px;
+  min-width: 120px;
+}
+
+.example-button-row {
+  display: table-cell;
+  width: 490px;
+}
+
+.example-button-row .mat-button-base {
+  margin: 8px 8px 8px 0;
+}
+
+.example-flex-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.example-button-container {
+  display: flex;
+  justify-content: center;
+  width: 120px;
 }

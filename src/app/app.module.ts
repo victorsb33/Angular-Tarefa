@@ -11,8 +11,10 @@ import { ListaTarefaLocalComponent } from './pages/lista-tarefa-local/lista-tare
 import { ListaTarefaApiComponent } from './pages/lista-tarefa-api/lista-tarefa-api.component';
 import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
-import {MatIconModule} from '@angular/material/icon';
+import { MatIconModule } from '@angular/material/icon';
 import { MatTableModule } from '@angular/material/table';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 
 
@@ -30,7 +32,9 @@ import { MatTableModule } from '@angular/material/table';
     MatInputModule,
     ReactiveFormsModule,
     MatIconModule,
-    MatTableModule
+    MatTableModule,
+    MatButtonModule,
+    MatCheckboxModule
     
   ],
   providers: [],
