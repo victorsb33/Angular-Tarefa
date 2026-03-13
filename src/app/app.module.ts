@@ -15,6 +15,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatTableModule } from '@angular/material/table';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 
 
@@ -34,7 +35,8 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     MatIconModule,
     MatTableModule,
     MatButtonModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatFormFieldModule
     
   ],
   providers: [],
